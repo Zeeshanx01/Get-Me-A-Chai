@@ -78,11 +78,10 @@ export default function Home() {
     <div className="text-white flex flex-col justify-center items-center py-5 pb-12 container mx-auto">
       <h1 className="text-2xl m-2 text-center py-4 font-bold">Learn more about us</h1>
 
-      {/* <div className="flex justify-evenly w-[100%] bg-gray-8000"> */}
+      
+      {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/qHQaLs1nypg?si=jXQeO2OLTRUYrTRk&amp;start=6" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe> */}
 
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/qHQaLs1nypg?si=jXQeO2OLTRUYrTRk&amp;start=6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-      {/* </div> */}
+  
 
 
     </div>
