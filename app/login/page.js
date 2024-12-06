@@ -2,7 +2,16 @@
 import React from 'react'
 import Link from 'next/link'
 import { useSession, signIn, signOut } from "next-auth/react"
+import { useRouter } from 'next/navigation'
 const page = () => {
+  const { data: session } = useSession()
+
+  if (session) {
+    const router = useRouter()
+    router.push('/dashboard')
+  }
+
+
   return (
     <div className='bg-blue-6000 container mx-auto w-4/5'>
       {/* <h1 className='text-center text-3xl font-bold'>Login Page</h1> */}
@@ -103,7 +112,7 @@ const page = () => {
           </button>
 
 
-          <button onClick={() => {signIn("github")}}
+          <button onClick={() => { signIn("github") }}
             className="flex items-center bg-slate-300 border w-64 border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
             <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
               viewBox="0 0 73 73" version="1.1">
