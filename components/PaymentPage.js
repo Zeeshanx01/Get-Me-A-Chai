@@ -9,7 +9,7 @@ import { fetchuser, fetchpayments, initiate } from '@/actions/useractions'
 // import 'react-toastify/dist/ReactToastify.css';
 // import { Bounce } from 'react-toastify';
 // import { useRouter } from 'next/navigation'
-// import { notFound } from "next/navigation"
+import { notFound } from "next/navigation"
 
 const PaymentPage = ({ username }) => {
   const { data: session } = useSession()
@@ -87,6 +87,7 @@ const PaymentPage = ({ username }) => {
   }
 
 
+
   return (<>
     {/* {params.username} */}
     <div className='cover bg-slate-500 w-full relative'>
@@ -106,10 +107,11 @@ const PaymentPage = ({ username }) => {
               @{username}
             </div>
             <div className='text-xs my-1'>
-              Creating Animated art for VTT's
+              Let's help {currentUser.name} get a chai!
             </div>
             <div className='text-xs opacity-60 my-1'>
-              15,105 members  .  92 Posts  .  $16,700/release
+              {/* 15,105 members  .  92 Posts  .  $16,700/release */}
+              {payments.length} donations. {currentUser.name} is raising funds for chai.
             </div>
           </div>
 

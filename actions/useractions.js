@@ -40,7 +40,6 @@ export const fetchuser = async (username) => {
 }
 
 
-
 export const fetchpayments = async (username) => {
   await connectDb()
   // find all payments sorted by decreasing order of amount and flatten object ids

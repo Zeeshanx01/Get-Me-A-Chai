@@ -7,6 +7,12 @@ import { useRouter } from 'next/navigation'
 import { fetchuser, updateProfile } from '@/actions/useractions'
 import { Router } from 'next/router'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
+
 const Dashboard = ({ params }) => {
 
   const { data: session, update } = useSession()
@@ -39,11 +45,40 @@ const Dashboard = ({ params }) => {
 
   const handleSubmit = async (e) => {
     let a = await updateProfile(e, session.user.name)
-    alert("Profile Updated")
+    // alert("Profile Updated")
+
+    toast('Profile Updated', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  
   }
 
 
   return (<>
+
+    <ToastContainer
+      position="top-right"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick={false}
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="dark"
+    // transition={Bounce}
+    />
+
+
+
     <div className='text-3xl font-bold text-center'>
       Welcome to your Dashboard
     </div>
@@ -69,7 +104,7 @@ const Dashboard = ({ params }) => {
         <label htmlFor="profilepic" className="block mb-2 text-sm font-medium ">Profile Picture</label>
         <input value={form.profilepic ? form.profilepic : ""} onChange={handleChange} type="text" name='profilepic' id="profilepic" className='w-full rounded-lg px-2 py-1 my-2 text-slate-300 bg-slate-700 border border-slate-600' />
       </div>
-      
+
       <div>
         <label htmlFor="coverpic" className="block mb-2 text-sm font-medium ">Cover Picture</label>
         <input value={form.coverpic ? form.coverpic : ""} onChange={handleChange} type="text" name='coverpic' id="coverpic" className='w-full rounded-lg px-2 py-1 my-2 text-slate-300 bg-slate-700 border border-slate-600' />

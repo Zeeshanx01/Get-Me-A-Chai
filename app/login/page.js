@@ -1,15 +1,21 @@
 'use client'
-import React from 'react'
+import React, {useEffect} from 'react'
 import Link from 'next/link'
 import { useSession, signIn, signOut } from "next-auth/react"
 import { useRouter } from 'next/navigation'
 const page = () => {
   const { data: session } = useSession()
+  const router = useRouter()
 
-  if (session) {
-    const router = useRouter()
-    router.push('/dashboard')
-  }
+
+  useEffect(() => {
+    document.title = "Login | Get Me A Chai"
+
+    if (session) {
+      router.push('/dashboard')
+    }
+  }, [router, session])
+
 
 
   return (
