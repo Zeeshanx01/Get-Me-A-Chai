@@ -65,7 +65,7 @@ const Navbar = () => {
                 <Link onClick={() => { setshowDropdown(!showDropdown) }} href="/dashboard" className="duration-200 block px-4 py-2 hover:bg-slate-700 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</Link>
               </li>
               <li>
-                <Link onClick={() => { setshowDropdown(!showDropdown) }} href="#" className="duration-200 block px-4 py-2 hover:bg-slate-700 dark:hover:bg-gray-600 dark:hover:text-white">Settings</Link>
+                <Link onClick={() => { setshowDropdown(!showDropdown) }} href={`/${session.user.name}`} className="duration-200 block px-4 py-2 hover:bg-slate-700 dark:hover:bg-gray-600 dark:hover:text-white">Your Page</Link>
               </li>
               <li>
                 <Link onClick={() => { setshowDropdown(!showDropdown) }} href="#" className="duration-200 block px-4 py-2 hover:bg-slate-700 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</Link>
